@@ -1,0 +1,31 @@
+<% layout('partials/boilerplate') %>
+    <h1 class="text-center">Edit Camp</h1>
+    <div class="w-screen flex justify-center">
+        <form action="/campgrounds/<%= foundCamp._id %>/edit?_method=PATCH" method="post" class="">
+            <div class="mb-3">
+                <label for="title" class="block">Title</label>
+                <input type="text" name="camp[title]" class="w-[20em]" id="title" value="<%= foundCamp.title %>">
+            </div>
+
+
+            <div class="mb-3">
+                <label for="location" class="block">Location</label>
+                <input class="w-[20em]" type="text" name="camp[location]" id="location"
+                    value=" <%= foundCamp.location %>">
+            </div>
+
+            <div class="mb-3">
+                <label for="price" class="block">Price</label>
+                <input placeholder="0.00" class="w-[20em]" type="text" name="camp[price]" id="price"
+                    value=" <%= foundCamp.price %>">
+            </div>
+
+            <div class="mb-3">
+                <label for="description" class="block">Description</label>
+                <textarea rows="10" cols="80" class="align-bottom w-[20em] h-20" name="camp[description]" id="description"><%= foundCamp.description %></textarea>
+            </div>
+
+
+            <button class="bg-gray-500 w-[6em] h-[2em] text-white border-none hover:text-red-600">Submit</button>
+        </form>
+    </div>

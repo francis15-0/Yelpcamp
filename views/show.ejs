@@ -1,0 +1,16 @@
+<% layout('partials/boilerplate') %>
+<div class="flex justify-center w-full flex-col items-center">
+     <h1> <%= foundCamp.title %></h1>
+    <p> <%= foundCamp.location %></p>
+    <img src="<%= foundCamp.image %>" alt="" class="w-[30em]  h-[30em]">
+    <p class="w-[30em]"><%= foundCamp.description %></p>
+
+    <a href="/campgrounds/<%= foundCamp._id %>/edit" class="text-cyan-900 no-underline">Edit</a>
+
+    <form action="/campgrounds/<%= foundCamp._id %>/delete?_method=Delete" method="post" class="mt-5 mb-4">
+        <button class="">Delete</button>
+    </form>
+<a href="/campgrounds">All camp</a>
+</div>
+
+   

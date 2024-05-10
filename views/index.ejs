@@ -1,0 +1,9 @@
+<% layout('partials/boilerplate') %>
+    <h1>All campgrounds</h1>
+    <a href="/campgrounds/new">new</a>
+    <ol>
+         <% for(let campgrounds of camp) { %>
+
+        <li><a href="/campgrounds/<%= campgrounds.id %>" class="no-underline text-black"><%= campgrounds.title %></a></li>
+    <% } %>
+    </ol>

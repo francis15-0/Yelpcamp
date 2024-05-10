@@ -1,0 +1,16 @@
+<% layout('partials/boilerplate') %>
+
+
+    <form action="/campgrounds" method="post">
+        <div class="mb-2">
+            <label for="title">Title</label>
+            <input type="text" name="camp[title]" id="title">
+        </div>
+
+
+        <div class="">
+            <label for="location">Location</label>
+            <input type="text" name="camp[location]" id="location">
+        </div>
+        <button class="bg-blue-600">Submit</button>
+    </form>
