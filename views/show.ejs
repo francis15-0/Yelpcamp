@@ -1,6 +1,7 @@
 <% layout('partials/boilerplate') %>
-<div class="flex justify-center w-full flex-col items-center">
-     <h1> <%= foundCamp.title %></h1>
+<div class="flex justify-center w-full items-center">
+    <div>
+         <h1> <%= foundCamp.title %></h1>
     <p> <%= foundCamp.location %></p>
     <img src="<%= foundCamp.image %>" alt="" class="w-[30em]  h-[30em]">
     <p class="w-[30em]"><%= foundCamp.description %></p>
@@ -11,6 +12,8 @@
         <button class="">Delete</button>
     </form>
 <a href="/campgrounds">All camp</a>
+    </div>
+    
 </div>
 
    

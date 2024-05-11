@@ -1,9 +1,30 @@
 <% layout('partials/boilerplate') %>
     <h1>All campgrounds</h1>
-    <a href="/campgrounds/new">new</a>
-    <ol>
-         <% for(let campgrounds of camp) { %>
 
-        <li><a href="/campgrounds/<%= campgrounds.id %>" class="no-underline text-black"><%= campgrounds.title %></a></li>
-    <% } %>
-    </ol>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 ml-8">
+        <% for(let campgrounds of camp) { %>
+            <div
+                class="w-[16em] h-[20em] border-black border-solid  rounded-tr-md  shadow-md mb-10 bg-morning-glory-200">
+                <img src="<%= campgrounds.image %>" alt="" class="w-[16em] h-[10em]">
+
+                <div class="flex justify-center">
+
+                    <div class="w-[14.6em] h-[9em] ">
+
+                        <p class="text-center m-0 mb-2 ">
+                            <a href="/campgrounds/<%= campgrounds.id %>"
+                                class="no-underline text-black text-center p-0 hover:text-orange-500">
+                                <%= campgrounds.title %>
+                            </a>
+                        </p>
+                        <h6 class="m-0">
+                            <%= campgrounds.description %>
+                        </h6>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <% } %>
+    </div>
