@@ -2,21 +2,21 @@
 
 
     <div class="w-screen flex justify-center mt-10">
-        <form action="/campgrounds" method="post" class="">
+        <form action="/campgrounds" method="post" class=" ">
             <div class="mb-3">
                 <label for="title" class="block">Title</label>
-                <input type="text" name="camp[title]" class="w-[20em] outline-none" id="title">
+                <input type="text" name="camp[title]" class="w-[20em] outline-none" id="title" required>
             </div>
 
 
             <div class="mb-3">
                 <label for="location" class="block">Location</label>
-                <input class="w-[20em] outline-none" type="text" name="camp[location]" id="location" </div>
+                <input class="w-[20em] outline-none" type="text" name="camp[location]" id="location" required > </div>
 
                 <div class="mb-3">
                     <label for="price" class="block">Price</label>
                     <div class="relative">
-                        <input placeholder="0.00" class="w-[20em] outline-none indent-4" type="text" name="camp[price]" id="price" </div>
+                        <input placeholder="0.00" class="w-[20em] outline-none indent-4" type="text" name="camp[price]" id="price" required> </div>
                         <i class="fa-solid fa-dollar-sign absolute left-1 top-[2px]"></i>
                     </div>
 
@@ -24,11 +24,11 @@
                     <div class="mb-3">
                         <label for="description" class="block">Description</label>
                         <textarea rows="10" cols="80" class="outline-none align-bottom w-[20em] h-20" name="camp[description]"
-                            id="description"></textarea>
+                            id="description" required></textarea>
                     </div>
 
 
                     <button
-                        class="bg-gray-500 w-[6em] h-[2em] text-white border-none hover:text-red-600">Submit</button>
+                        class="bg-gray-500 w-[6em] h-[2em] text-white border-none hover:text-red-600 group-invalid:pointer-events-none group-invalid:opacity-30">Submit</button>
         </form>
     </div>
