@@ -1,19 +1,72 @@
 <% layout('partials/boilerplate') %>
-<div class="flex justify-center w-full items-center">
-    <div>
-         <h1> <%= foundCamp.title %></h1>
-    <p> <%= foundCamp.location %></p>
-    <img src="<%= foundCamp.image %>" alt="" class="w-[30em]  h-[30em]">
-    <p class="w-[30em]"><%= foundCamp.description %></p>
+    <div class="flex justify-center w-full ">
 
-    <a href="/campgrounds/<%= foundCamp._id %>/edit" class="text-cyan-900 no-underline">Edit</a>
 
-    <form action="/campgrounds/<%= foundCamp._id %>/delete?_method=Delete" method="post" class="mt-5 mb-4">
-        <button class="">Delete</button>
-    </form>
-<a href="/campgrounds">All camp</a>
+        <div>
+            <img src="<%= foundCamp.image %>" alt="" class="w-[30em]  h-[20em]">
+            <div class="border-gray-400 border-solid border-[1px] w-[30em]">
+
+
+
+                <h1 class="text-xl font-bold mt-2 pl-2">
+                    <%= foundCamp.title %>
+                </h1>
+
+                <p class="w-[29em] pl-2 mb-3">
+                    <%= foundCamp.description %>
+                </p>
+                <p class="border-gray-400 border-solid text-gray-500 border-t-[1px] border-b-[1px] pl-2 text-sm">
+                    <%= foundCamp.location %>
+                </p>
+                <p class="border-b-[1px] border-solid border-gray-400 mb-3 pl-2">
+                    $<%= foundCamp.price %>/night
+                </p>
+
+                <div class="flex w-32 justify-between mb-2 pl-2">
+
+                    <a href="/campgrounds/<%= foundCamp._id %>/edit"
+                        class=" no-underline bg-blue-500 w-14 flex items-center justify-center rounded-sm text-black">Edit</a>
+
+                    <form action="/campgrounds/<%= foundCamp._id %>/delete?_method=Delete" method="post" class="">
+                        <button class="bg-red-500 w-14 rounded-sm">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-[25em] ml-10">
+            <h2 class="m-0">Leave a review</h2>
+            <form action="/campgrounds/<%= foundCamp._id %>/review" method="post">
+                <p>Rating</p>
+                <input type="range" min="1" max="5" class="w-[25em]" name="review[rating]">
+                <p>Review</p>
+                <textarea name="review[body]" id="" class="w-[25em] border-solid border-black border-2"></textarea>
+                <button class="bg-green-500 mb-4">Submit</button>
+
+            </form>
+
+            <% for( let review of foundCamp.reviews) { %>
+                <div class="w-[25em] mb-4 border-solid border-gray-400 border-[1px]">
+                    <p>
+                        Rating: <%= review.rating %>
+                    </p>
+
+                    <p>
+                        Review:<%= review.body %>
+                    </p>
+
+                    <form action="/campgrounds/<%= foundCamp._id %>/reviews/<%= review._id %>?_method=Delete" method="post" class="">
+                        <button class="bg-red-500 w-14 rounded-sm">Delete</button>
+                    </form>
+                </div>
+                <% } %>
+
+
+
+
+
+        </div>
+
+
+
     </div>
-    
-</div>
-
-   
